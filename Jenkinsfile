@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        registry = "vahiwe/staging"
+        registry = "lokesh003/DockerKubernetes"
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
@@ -34,8 +34,8 @@ pipeline {
         }
         stage('Update Kube Config'){
             steps {
-                withAWS(region:'us-east-1',credentials:'aws') {
-                    sh 'aws eks --region us-east-1 update-kubeconfig --name stage-cluster'                    
+                withAWS(region:'ap-south-1',credentials:'aws') {
+                    sh 'aws eks --region ap-south-1 update-kubeconfig --name neweks-cluster'                    
                 }
             }
         }
