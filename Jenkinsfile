@@ -8,7 +8,7 @@ pipeline {
     stages {
          stage('Lint files') {
               steps {
-                  sh 'make lint'
+                  bat 'make lint'
               }
          }
          stage('Building image') {
